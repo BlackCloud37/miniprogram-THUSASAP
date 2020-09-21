@@ -1,0 +1,37 @@
+/* components/listitem/listitem.wxss */
+.listitemavatar {
+  border-radius: 50%;
+  margin: 5px 20px 5px 20px;
+  flex-basis: 60px;
+  flex-grow: 0;
+  height: 60px;
+  width: 60px;
+  overflow: hidden;
+  /* background-color: red; */
+}
+
+.listitem {
+  display: flex;
+}
+
+.nav {
+  display: flex;
+  flex-grow: 1;
+}
+
+.container {
+  display: flex;
+  flex-grow: 1;
+  border-top: rgba(133, 116, 28, 0.2) solid 1px;
+  align-items: center;
+  height: 70px;
+}
+
+text {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-family: sans-serif;
+  flex-basis: 4em;
+  color: #803806;
+}

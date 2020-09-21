@@ -1,0 +1,15 @@
+<!--index.wxml-->
+<view class="container">
+  <!-- 会徽及简介页面 -->
+  <!-- <view id="aboutimageview">
+    <navigator url="../about/about" open-type="navigate">
+        <image id="aboutimage" src="../../images/console-entrance.png" style="height: 50px"></image>
+    </navigator>
+  </view> -->
+  
+  <!-- 搜索栏 -->
+
+
+  <!-- 列表，默认为全部 -->
+  <listview item-prop-list="{{itemPropList}}"></listview>
+</view>

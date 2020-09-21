@@ -1,0 +1,91 @@
+<!--components/detailinfo/detailinfo.wxml-->
+
+<view class="container">
+  <view class="coverimg"><image mode="widthFix" wx:if="{{itemProp.imagenum>=0}}" src="{{img_root_url + '/' + itemProp.name + '/cover.jpg' }}" alt="图片加载失败"/></view>
+  
+
+
+
+  <view class="textview">
+    <text class="titletext">姓名：</text>
+    <text class="contenttext">{{itemProp.name}}</text>
+  </view>
+
+
+  <view class="textview" wx:if="{{ itemProp.nickname!=='' }}">
+    <text class="titletext">昵称：</text>
+    <text class="contenttext">{{itemProp.nickname}}</text>
+  </view>
+
+
+  <view class="textview">
+    <text class="titletext">性别：</text>
+    <text class="contenttext">{{itemProp.gender}}</text>
+  </view>
+
+
+  <view class="textview">
+    <text class="titletext">毛色：</text>
+    <text class="contenttext">{{itemProp.color}}</text>
+  </view>
+
+
+  <view class="textview" wx:if="{{ itemProp.appearance!=='' }}">
+    <text class="titletext">外貌：</text>
+    <text class="contenttext">{{ itemProp.appearance }}</text>
+  </view>
+
+
+  <view class="textview" wx:if="{{ itemProp.birthdate!=='' }}">
+    <text class="titletext">出生时间：</text>
+    <text class="contenttext">{{ itemProp.birthdate }}</text>
+  </view>
+
+
+  <view class="textview" wx:if="{{ itemProp.place!=='' }}">
+    <text class="titletext">出没地点：</text>
+    <text class="contenttext">{{itemProp.place}}</text>
+  </view>
+
+
+  <view class="textview">
+    <text class="titletext">绝育状态：</text>
+    <text class="contenttext">{{itemProp.neuterstatus}}</text>
+  </view>
+  <view class="textview" wx:if="{{ itemProp.neuterdate !== '' }}">
+    <text class="titletext">绝育时间：</text>
+    <text class="contenttext">{{ itemProp.neuterdate }}</text>
+  </view>
+
+
+
+  <view class="textview">
+    <text class="titletext">送养状态：</text>
+    <text class="contenttext">{{ itemProp.adoptionstatus }}</text>
+  </view>
+  <view class="textview" wx:if="{{ itemProp.adoptiondate!=='' }}">
+    <text class="titletext">送养时间：</text>
+    <text class="contenttext">{{ itemProp.adoptiondate }}</text>
+  </view>
+
+
+  <view class="textview" wx:if="{{ itemProp.character!=='' }}">
+    <text class="titletext">性格：</text>
+    <text class="contenttext">{{ itemProp.character }}</text>
+  </view>
+
+
+  <view class="textview" wx:if="{{ itemProp.kinship!=='' }}">
+    <text class="titletext">亲缘：</text>
+    <text class="contenttext">{{ itemProp.kinship }}</text>
+  </view>
+
+
+  <view class="textview" wx:if="{{ itemProp.notes!=='' }}">
+    <text class="titletext">备注：</text>
+    <text class="contenttext">{{ itemProp.notes }}</text>
+  </view>
+
+
+  <view class="coverimg" wx:key='unique' wx:for="{{picSrcNameList}}"><image mode="widthFix" src="{{img_root_url + '/' + itemProp.name + '/' + item}}" /></view>
+</view>

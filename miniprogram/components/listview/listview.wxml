@@ -1,0 +1,2 @@
+<!--components/listview/listview.wxml-->
+<listitem wx:for="{{itemPropList}}" wx:key="unique" item-prop="{{item}}"></listitem>

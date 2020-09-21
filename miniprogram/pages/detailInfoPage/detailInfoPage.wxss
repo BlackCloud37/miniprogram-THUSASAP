@@ -1,0 +1,4 @@
+/* miniprogram/pages/detailInfoPage/detailInfoPage.wxss */
+page {
+  background: #F9F5E9;
+}

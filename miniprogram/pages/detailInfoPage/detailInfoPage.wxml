@@ -1,0 +1,2 @@
+<!--miniprogram/pages/detailInfoPage/detailInfoPage.wxml-->
+<detailinfo item-id="{{itemId}}"></detailinfo>

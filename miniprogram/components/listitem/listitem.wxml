@@ -1,0 +1,12 @@
+<!--components/listitem/listitem.wxml-->
+<view class="listitem">
+  <!-- navigate to detailpage -->
+  <navigator url="../../pages/detailInfoPage/detailInfoPage?itemId={{itemProp.id}}" class="nav">
+    <view class="container">
+      <view class="listitemavatar">
+        <view style="background:url({{itemProp.imagenum !== -1?img_root_url + '/' + itemProp.name + '/icon.jpg':'./user-unlogin.png' }}) no-repeat; background-position: center;background-size: cover; height: 100%; width:100%"></view>
+      </view>
+      <text>{{itemProp.name}}</text>
+    </view>
+  </navigator>
+</view>

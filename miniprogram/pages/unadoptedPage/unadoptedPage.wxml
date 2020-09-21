@@ -1,0 +1,13 @@
+
+<view class="container">
+
+  <!-- 搜索栏 -->
+  <view class="searchinput">
+    <input type="text" placeholder="input cat name here" confirm-type="search"></input>
+  </view>
+
+
+  <!-- 列表，默认为全部 -->
+  <listview item-prop-list="{{itemPropList}}"></listview>
+
+</view>
