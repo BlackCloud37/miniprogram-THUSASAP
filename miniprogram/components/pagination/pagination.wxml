@@ -1,2 +1,22 @@
 <!--components/pagination/pagination.wxml-->
-<text>components/pagination/pagination.wxml</text>
+<view class="container">
+  <button 
+          data-idx="{{currentPage-1}}" 
+          bindtap="shiftPage" 
+          class="button edge {{currentPage<=1?'disabled':''}}">
+          <arrow class="left {{currentPage<=1?'disabled':''}}"/>
+  </button>
+  <button wx:key="unique" 
+          wx:for="{{pageArray}}" 
+          data-idx="{{item}}" 
+          bindtap="shiftPage" 
+          class="button {{item == currentPage? 'selected':''}}">
+          {{item}}
+  </button>
+  <button 
+          data-idx="{{currentPage+1}}" 
+          bindtap="shiftPage" 
+          class="button edge {{currentPage>=totalPage?'disabled':''}}">
+          <arrow class="right {{currentPage>=totalPage?'disabled':''}}"/>
+  </button>
+</view>

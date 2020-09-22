@@ -1,2 +1,7 @@
 <!--components/listview/listview.wxml-->
-<listitem wx:for="{{itemPropList}}" wx:key="unique" item-prop="{{item}}"></listitem>
+<view class="container">
+  <view class="list">
+    <listitem wx:for="{{showList}}" wx:key="unique" item-prop="{{item}}"></listitem>
+  </view>
+  <pagination page-size="{{pageSize}}" totalPage="{{totalPage}}" bind:change-page="onPageChanged"/>
+</view>

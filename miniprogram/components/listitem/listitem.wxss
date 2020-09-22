@@ -1,30 +1,23 @@
 /* components/listitem/listitem.wxss */
-.listitemavatar {
-  border-radius: 50%;
-  margin: 5px 20px 5px 20px;
-  flex-basis: 60px;
-  flex-grow: 0;
-  height: 60px;
-  width: 60px;
-  overflow: hidden;
-  /* background-color: red; */
-}
-
-.listitem {
+.container {
   display: flex;
+  height: 120rpx;
 }
 
 .nav {
   display: flex;
   flex-grow: 1;
+  border-top: rgba(133, 116, 28, 0.2) solid 2rpx;
+  align-items: center;
 }
 
-.container {
-  display: flex;
-  flex-grow: 1;
-  border-top: rgba(133, 116, 28, 0.2) solid 1px;
-  align-items: center;
-  height: 70px;
+.listitemavatar {
+  border-radius: 50%;
+  margin: 10rpx 40rpx 10rpx 40rpx;
+  /* background-color: salmon; */
+  height: 100rpx;
+  width: 100rpx;
+  overflow: hidden;
 }
 
 text {

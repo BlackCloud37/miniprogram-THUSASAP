@@ -1,1 +1,48 @@
 /* components/pagination/pagination.wxss */
+.container {
+  border-top: rgba(133, 116, 28, 0.2) solid 1px;
+  display: flex;
+  justify-content: space-between;
+  height: 40px;
+  width: 100%;
+  position: fixed;
+  bottom: 60px;
+  background-color: #F9F5E9;
+}
+
+.button {
+  color: #803806;
+  background: #F9F5E9;
+}
+
+.disabled {
+  cursor: not-allowed;
+  border-color: lightgray;
+}
+
+.edge {
+  flex-grow: 0;
+  flex-basis: 30rpx;
+}
+
+.selected {
+  background: #803806;
+  color: #F9F5E9;
+}
+
+arrow {
+  border: solid #803806;               
+  border-width: 0 6rpx 6rpx 0;
+  display: inline-block;
+  padding: 6rpx;
+}
+
+.left {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+}
+
+.right {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+}

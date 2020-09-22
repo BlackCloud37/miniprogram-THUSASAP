@@ -1,6 +1,7 @@
 {
   "component": true,
   "usingComponents": {
-    "listitem":"../listitem/listitem"
+    "listitem":"../listitem/listitem",
+    "pagination":"../pagination/pagination"
   }
 }

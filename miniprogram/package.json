@@ -1,0 +1,22 @@
+{
+  "name": "miniprogram-thusasap",
+  "version": "1.0.0",
+  "description": "miniprogram for thusasap",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BlackCloud37/miniprogram-THUSASAP"
+  },
+  "keywords": [
+    "miniprogram"
+  ],
+  "author": "Blackcloud37",
+  "license": "ISC",
+  "dependencies": {
+    "miniprogram-computed": "^2.1.1",
+    "miniprogram-sm-crypto": "^0.2.1"
+  }
+}
