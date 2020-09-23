@@ -1,0 +1,18 @@
+<!--components/searchbar/searchbar.wxml-->
+<view class="container">
+  <view bindtap="clear" wx:if="{{value.length>0}}" class="clear"><image src="../../images/叉叉.svg" style="width:100%;height:100%;" /></view>
+  <input model:value="{{value}}" bindconfirm="onInputChanged" class="input" placeholder="搜索" />
+  
+  
+  <!-- <button class="button" bindtap="onTapFilter"></button>
+  <view wx:if="{{showFilterCard}}" class="filter-card">
+    <view>
+      筛选
+    </view>
+    <view>
+      <label><checkbox />送养</label>
+      <label><checkbox />绝育</label>
+      <label><checkbox /></label>
+    </view>
+  </view> -->
+</view>

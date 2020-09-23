@@ -1,6 +1,7 @@
 {
   "usingComponents": {
     "listview":"../../components/listview/listview",
-    "mp-tabbar": "/miniprogram_npm/weui-miniprogram/tabbar/tabbar"
+    "mp-tabbar": "/miniprogram_npm/weui-miniprogram/tabbar/tabbar",
+    "searchbar":"../../components/searchbar/searchbar"
   }
 }

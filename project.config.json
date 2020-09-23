@@ -30,7 +30,7 @@
   },
   "appid": "wx02a19743333f2fc5",
   "projectname": "illustrated_handbook",
-  "libVersion": "2.8.1",
+  "libVersion": "2.12.2",
   "simulatorType": "wechat",
   "simulatorPluginLibVersion": {},
   "compileType": "miniprogram",

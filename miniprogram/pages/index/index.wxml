@@ -1,5 +1,6 @@
 <!--index.wxml-->
 <view class="container">
-  <listview/>
+  <searchbar bind:filter-options='onFilterOptionsChanged'/>
+  <listview filter-options='{{filterOptions}}'/>
   <mp-tabbar ext-class="tabbar" list="{{tabBarList}}" bindchange="tabChange"></mp-tabbar>
 </view>
