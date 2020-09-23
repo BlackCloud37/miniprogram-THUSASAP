@@ -2,6 +2,7 @@
   "component": true,
   "usingComponents": {
     "listitem":"../listitem/listitem",
-    "pagination":"../pagination/pagination"
+    "pagination":"../pagination/pagination",
+    "mp-loading": "/miniprogram_npm/weui-miniprogram/loading/loading"
   }
 }

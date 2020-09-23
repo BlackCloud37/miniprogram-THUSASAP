@@ -1,7 +1,8 @@
 <!--components/listview/listview.wxml-->
 <view class="container">
-  <view class="list">
+  <view wx:if="{{finished}}" class="list">
     <listitem wx:for="{{showList}}" wx:key="unique" item-prop="{{item}}"></listitem>
   </view>
+  <mp-loading type="circle" show="{{!finished}}"></mp-loading>
   <pagination page-size="{{pageSize}}" totalPage="{{totalPage}}" bind:change-page="onPageChanged"/>
 </view>

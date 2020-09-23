@@ -2,10 +2,11 @@
 <view class="container">
   <navigator url="../../pages/detailInfoPage/detailInfoPage?itemId={{itemProp.id}}" class="nav">    
       <view class="listitemavatar">
-        <!-- <image src="../../images/cat_no_avatar.svg"></image> -->
         <view 
-        style="background:url({{itemProp.imagenum !== -1 ? img_root_url + '/' + itemProp.name + '/icon.jpg' : './cat_no_avatar.svg' }}) no-repeat; background-position: center;background-size: cover; height: 100%; width:100%">
+          wx:if='{{itemProp.imagenum !== -1}}'
+          style="background:url({{img_root_url + '/' + itemProp.name + '/icon.jpg'}}) no-repeat; background-position: center;background-size: cover; height: 100%; width:100%">
         </view>
+        <image wx:if='{{itemProp.imagenum === -1}}' src="https://thusasap-miniprogram-img.oss-cn-beijing.aliyuncs.com/resources/cat_no_avatar.svg" style="height:100%;width:100%;" />
       </view>
       <text>{{itemProp.name}}</text>
   </navigator>

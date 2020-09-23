@@ -1,6 +1,5 @@
 <!--index.wxml-->
 <view class="container">
-  <!-- <view style="background:red;position:fixed;">x</view> -->
   <listview/>
   <mp-tabbar ext-class="tabbar" list="{{tabBarList}}" bindchange="tabChange"></mp-tabbar>
 </view>

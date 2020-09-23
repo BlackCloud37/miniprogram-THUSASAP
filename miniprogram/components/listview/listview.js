@@ -1,6 +1,8 @@
 // components/listview/listview.js
 const app = getApp()
 const computedBehavior = require('miniprogram-computed')
+const db = wx.cloud.database()
+
 Component({
   behaviors: [computedBehavior],
   properties: {
@@ -8,65 +10,54 @@ Component({
   },
 
   data: {
-    itemPropList: [],
-    pageSize: 12,
+    showList: [],
+    totalPage: 0,
+    pageSize: 10,
     currentPage: 1,
+    finished: false,
   },
 
   lifetimes: {
-    created: function() {
-      this._getItemPropList()
+    created: async function() {
+      const countResult = await db.collection(app.globalData.database_id).count()
+      const total = countResult.total
+      this.setData({
+        totalPage: Math.ceil(total / this.data.pageSize)
+      })
+      this.getCurrentPage()
     }
   },
   
   methods: {
     onPageChanged: function (e) {
-      // console.log(e.detail)
       if (e.detail && e.detail !== this.data.currentPage) {
         this.setData({
           currentPage: e.detail
         })
+        this.getCurrentPage()
       }
     },
-    _getItemPropList: async function () {
-      const db = wx.cloud.database()
-      const MAX_LIMIT = 20
-      const countResult = await db.collection(app.globalData.database_id).count()
-      const total = countResult.total
-      const batchTimes = Math.ceil(total / MAX_LIMIT)
-      const tasks = []
-      for (let i = 0; i < batchTimes; i++) {
-        const promise = db.collection(app.globalData.database_id)
-                        .skip(i * MAX_LIMIT)
-                        .limit(MAX_LIMIT)
-                        .get()
-        tasks.push(promise)
-      }
 
-      const result = (await Promise.all(tasks)).reduce(
-        (acc, cur) => {
-          return {
-            data: acc.data.concat(cur.data),
-            errMsg: acc.errMsg
-          }
-        })
+    getCurrentPage: async function() {
       this.setData({
-        itemPropList: result.data,
+        finished: false
       })
-    },
+      db.collection(app.globalData.database_id)
+        .skip(this.data.startIdx)
+        .limit(this.data.pageSize)
+        .get()
+        .then((res) => {
+          this.setData({
+            showList: res.data,
+            finished: true
+          })
+
+        })
+    }
   },
   computed: {
     startIdx(data) {
       return (data.currentPage-1) * data.pageSize
     },
-    endIdx(data) {
-      return data.startIdx + data.pageSize
-    },
-    showList(data) {
-      return data.itemPropList.slice(data.startIdx, data.endIdx)
-    },
-    totalPage(data) {
-      return Math.ceil(data.itemPropList.length / data.pageSize)
-    }
   }
 })
